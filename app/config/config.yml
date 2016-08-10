@@ -41,18 +41,7 @@ twig:
 doctrine:
     dbal:
         driver:   pdo_mysql
-        host:     "%database_host%"
-        port:     "%database_port%"
-        dbname:   "%database_name%"
-        user:     "%database_user%"
-        password: "%database_password%"
         charset:  UTF8
-        # if using pdo_sqlite as your database driver:
-        #   1. add the path in parameters.yml
-        #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
-        #   2. Uncomment database_path in parameters.yml.dist
-        #   3. Uncomment next line:
-        #     path:     "%database_path%"
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
@@ -61,8 +50,50 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: "%mailer_transport%"
-    host:      "%mailer_host%"
-    username:  "%mailer_user%"
-    password:  "%mailer_password%"
-    spool:     { type: memory }
+    spool:      { type: memory }
+
+# FOSUserBundle Configuration
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    registration:
+        confirmation:
+            enabled: true
+
+# FOSOAuthServerBundle Configuration
+fos_oauth_server:
+    db_driver: orm
+    client_class:        ApiBundle\Entity\Client
+    access_token_class:  ApiBundle\Entity\AccessToken
+    refresh_token_class: ApiBundle\Entity\RefreshToken
+    auth_code_class:     ApiBundle\Entity\AuthCode
+    service:
+        user_provider: fos_user.user_manager
+        options:
+            supported_scopes: user
+
+# FOSRestBundle Configuration
+fos_rest:
+    #format_listener:
+    #    rules:
+    #        fallback_format: json
+    #        prefer_extension: false
+    #        priorities: [json, xml]
+    view:
+        view_response_listener: force
+        formats:
+            xml:  true
+            json: true
+        templating_formats:
+            html: true
+
+# JMSSerializer Configuration
+#jms_serializer:
+#    metadata:
+#        auto_detection: true
+#        directories:
+#            - { path: %kernel.root_dir%/Resources/serializer/FOS, namespace_prefix: 'FOS\UserBundle' }
+#            AppBundle:
+#                namespace_prefix: "AppBundle"
+#                path: "@AppBundle/Resources/config/serializer"

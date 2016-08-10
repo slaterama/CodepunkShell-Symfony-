@@ -11,6 +11,21 @@ web_profiler:
     toolbar: true
     intercept_redirects: false
 
+# Doctrine Configuration
+doctrine:
+    dbal:
+        host:     "%database_host_dev%"
+        port:     "%database_port_dev%"
+        dbname:   "%database_name_dev%"
+        user:     "%database_user_dev%"
+        password: "%database_password_dev%"
+        # if using pdo_sqlite as your database driver:
+        #   1. add the path in parameters.yml
+        #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
+        #   2. Uncomment database_path_dev in parameters.yml.dist
+        #   3. Uncomment next line:
+        #     path:     "%database_path_dev%"
+
 monolog:
     handlers:
         main:
@@ -30,5 +45,19 @@ monolog:
         #    type:   chromephp
         #    level:  info
 
-#swiftmailer:
+# Swiftmailer Configuration
+swiftmailer:
+    transport:  "%mailer_transport_dev%"
+    host:       "%mailer_host_dev%"
+    port:       "%mailer_port_dev%"
+    encryption: "%mailer_encryption_dev%"
+    auth_mode:  "%mailer_auth_mode_dev%"
+    username:   "%mailer_user_dev%"
+    password:   "%mailer_password_dev%"
 #    delivery_address: me@example.com
+
+# FOSUserBundle Configuration
+fos_user:
+    from_email:
+        address: "%fos_user_from_email_address_dev%"
+        sender_name: "%fos_user_from_email_sender_name_dev%"

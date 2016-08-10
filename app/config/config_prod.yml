@@ -1,7 +1,21 @@
 imports:
     - { resource: config.yml }
 
-#doctrine:
+# Doctrine Configuration
+doctrine:
+    dbal:
+        host:     "%database_host_prod%"
+        port:     "%database_port_prod%"
+        dbname:   "%database_name_prod%"
+        user:     "%database_user_prod%"
+        password: "%database_password_prod%"
+        # if using pdo_sqlite as your database driver:
+        #   1. add the path in parameters.yml
+        #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
+        #   2. Uncomment database_path_prod in parameters.yml.dist
+        #   3. Uncomment next line:
+        #     path:     "%database_path_prod%"
+
 #    orm:
 #        metadata_cache_driver: apc
 #        result_cache_driver: apc
@@ -19,3 +33,19 @@ monolog:
             level: debug
         console:
             type:  console
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport:  "%mailer_transport_prod%"
+    host:       "%mailer_host_prod%"
+    port:       "%mailer_port_prod%"
+    encryption: "%mailer_encryption_prod%"
+    auth_mode:  "%mailer_auth_mode_prod%"
+    username:   "%mailer_user_prod%"
+    password:   "%mailer_password_prod%"
+
+# FOSUserBundle Configuration
+fos_user:
+    from_email:
+        address: "%fos_user_from_email_address_prod%"
+        sender_name: "%fos_user_from_email_sender_name_prod%"
