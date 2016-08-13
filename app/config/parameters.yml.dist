@@ -2,43 +2,43 @@
 # Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
 # http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
 parameters:
-    database_host_prod:     codepunk.com
-    database_port_prod:     3306
-    database_name_prod:     codepunk_db
-    database_user_prod:     codepunk_root
-    database_password_prod: ~
+    database_host_prod:                   ~
+    database_port_prod:                   ~
+    database_name_prod:                   ~
+    database_user_prod:                   ~
+    database_password_prod:               ~
     # You should uncomment this if you want use pdo_sqlite
     # database_path_prod:     "%kernel.root_dir%/data.db3"
 
-    database_host_dev:      codepunk.com
-    database_port_dev:      3306
-    database_name_dev:      codepunk_db_dev
-    database_user_dev:      codepunk_root
-    database_password_dev:  ~
+    database_host_dev:                    ~
+    database_port_dev:                    ~
+    database_name_dev:                    ~
+    database_user_dev:                    ~
+    database_password_dev:                ~
     # You should uncomment this if you want use pdo_sqlite
     # database_path_dev:      "%kernel.root_dir%/data.db3"
 
-    mailer_transport_prod:  smtp
-    mailer_host_prod:       secure336.sgcpanel.com
-    mailer_port_prod:       465
-    mailer_encryption_prod: ssl
-    mailer_auth_mode_prod:  login
-    mailer_user_prod:       donotreply@codepunk.com
-    mailer_password_prod:   ~
+    mailer_transport_prod:                ~
+    mailer_host_prod:                     ~
+    mailer_port_prod:                     ~
+    mailer_encryption_prod:               ~
+    mailer_auth_mode_prod:                ~
+    mailer_user_prod:                     ~
+    mailer_password_prod:                 ~
 
-    mailer_transport_dev:   smtp
-    mailer_host_dev:        secure336.sgcpanel.com
-    mailer_port_dev:        465
-    mailer_encryption_dev:  ssl
-    mailer_auth_mode_dev:   login
-    mailer_user_dev:        donotreply@codepunk.com
-    mailer_password_dev:    ~
+    mailer_transport_dev:                 ~
+    mailer_host_dev:                      ~
+    mailer_port_dev:                      ~
+    mailer_encryption_dev:                ~
+    mailer_auth_mode_dev:                 ~
+    mailer_user_dev:                      ~
+    mailer_password_dev:                  ~
 
-    fos_user_from_email_address_prod: donotreply@codepunk.com
-    fos_user_from_email_sender_name_prod: Codepunk
+    fos_user_from_email_address_prod:     ~
+    fos_user_from_email_sender_name_prod: ~
 
-    fos_user_from_email_address_dev: donotreply@codepunk.com
-    fos_user_from_email_sender_name_dev: Codepunk
+    fos_user_from_email_address_dev:      ~
+    fos_user_from_email_sender_name_dev:  ~
 
     # A secret key that's used to generate certain security-related tokens
-    secret:                 ThisTokenIsNotSoSecretChangeIt
+    secret:                               ThisTokenIsNotSoSecretChangeIt
